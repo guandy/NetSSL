@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SSL 请求</title>
+    <script src="~/Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jsencrypt.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/crypto-js.js" type="text/javascript"></script>
+    <script src="~/Scripts/ssl.encrypted.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function ()
+        {
+
+            ssllPost();
+
+            $("#sslpost").click(function ()
+            {
+                ssllPost();
+            });
+
+            function ssllPost()
+            {
+                ssl.encrypted.post("/Home/Test", { id: 10001, name: "andy.gu" },
+                    function (result)
+                    {
+                        $("#result").html("返回数据="+JSON.stringify(result));
+                    });
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" id="sslpost" value="SSL加密请求" />
+        <br />
+        <div id="result"></div>
+    </div>
+</body>
+</html>

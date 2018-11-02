@@ -2,7 +2,7 @@
 {
     var ssl = window.ssl = window.ssl || {};
 
-    var sectype = 0;//0:AES加密，1：DES加密
+    var sectype = 1;//0:AES加密，1：DES加密
 
     
     var Encrypted = function ()

@@ -16,7 +16,7 @@ namespace NetSSL
             string keyString = "";
             bool isDefault = false;
             int sectype = SecType.Aes.GetHashCode();
-
+            jsonString = HttpUtility.UrlDecode(jsonString);
             if (jsonString.Contains("secret=") && jsonString.Contains("encryption="))
             {
                 var kv = jsonString.Split('&');

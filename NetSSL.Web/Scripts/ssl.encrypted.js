@@ -121,6 +121,7 @@
    *************************/
     Encrypted.prototype.createEncryptData = function (data)
     {
+        debugger
         var g = this, secret, encryption,key;
         var dataJosn = JSON.stringify(data);
         if (sectype == 0)//AES加密
